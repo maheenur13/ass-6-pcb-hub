@@ -7,7 +7,9 @@ export const authOptions = {
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
     }),
-    // ...add more providers here
   ],
+  pages: {
+    signIn: "/sign-in",
+  },
 };
 export default NextAuth(authOptions);
