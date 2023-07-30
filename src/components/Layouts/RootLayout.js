@@ -11,13 +11,9 @@ const RootLayout = ({ children }) => {
 
   return (
     <Layout className="layout">
-      <Header
-        style={{
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
+      <Header>
         <HeaderSection />
+        {/* <NewHeader /> */}
       </Header>
       <Content>
         <div
