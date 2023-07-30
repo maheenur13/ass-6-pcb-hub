@@ -11,7 +11,7 @@ const SignIn = () => {
     // Implement GitHub authentication logic here
     // Redirect the user to the GitHub authentication page
     signIn("github", {
-      callbackUrl: callbackUrl || process.env.PUBLIC_URL,
+      callbackUrl: process.env.PUBLIC_URL,
     });
   };
   const handleGoogleAuth = () => {
