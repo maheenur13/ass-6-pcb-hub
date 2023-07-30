@@ -68,7 +68,7 @@ const HeaderSection = () => {
                     items: [
                       {
                         key: "1",
-                        label: <p>1st menu item</p>,
+                        label: <p>{session.user.email}</p>,
                       },
                       {
                         key: "2",
