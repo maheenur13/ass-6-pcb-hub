@@ -9,7 +9,7 @@ export const authOptions = {
     }),
   ],
   pages: {
-    signIn: "https://pcb-hub-back.onrender.com/sign-in",
+    signIn: "https://ass-6-pcb-h8by3itau-maheenur13.vercel.app/sign-in",
   },
 };
 export default NextAuth(authOptions);
