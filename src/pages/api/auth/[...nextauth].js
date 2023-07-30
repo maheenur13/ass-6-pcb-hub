@@ -9,7 +9,7 @@ export const authOptions = {
     }),
   ],
   pages: {
-    signIn: "/sign-in",
+    signIn: "https://pcb-hub-back.onrender.com/sign-in",
   },
 };
 export default NextAuth(authOptions);
