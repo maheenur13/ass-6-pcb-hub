@@ -4,7 +4,7 @@ This project is based on pc about pc builder. Here user can find their pc compon
 
 ## live link
 
-https://ass-6-pcb-d31q6cl7u-maheenur13.vercel.app/
+https://ass-6-pcb-hub.vercel.app
 
 ## github link
 
