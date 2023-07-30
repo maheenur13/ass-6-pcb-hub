@@ -16,10 +16,10 @@ const LoginSection = () => {
     // Implement Google authentication logic here
     // Redirect the user to the Google authentication page
   };
-
+  console.log({ authModalOpen });
   return (
     <Modal
-      title={<p className="text-center text-xl m-0">Login</p>}
+      title={<p className="text-center text-xl m-0 p-1">Login</p>}
       open={authModalOpen}
       onCancel={() => dispatch(setAuthModalOpen(false))}
       width={270}
@@ -33,7 +33,7 @@ const LoginSection = () => {
         >
           Sign in with GitHub
         </Button>
-        <Button onClick={handleGoogleAuth}>Sign in with Google</Button>
+        {/* <Button onClick={handleGoogleAuth}>Sign in with Google</Button> */}
       </div>
     </Modal>
   );
