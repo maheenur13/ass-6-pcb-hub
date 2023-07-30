@@ -1,21 +1,36 @@
 import { useWindowSize } from "@/hooks/useWindowSize";
+import { useGetCategoriesQuery } from "@/redux/features/category/category.api";
 import { setAuthModalOpen } from "@/redux/features/user/user.slice";
 import { useAppDispatch } from "@/redux/hook";
 import { Avatar, Button, Dropdown, Menu } from "antd";
 import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import LoginSection from "../auth/Login";
 import MobileHeader from "./MobileHeader";
-import { headerItems } from "./constants";
 
 const HeaderSection = () => {
   const dispatch = useAppDispatch();
   const { width } = useWindowSize();
   const { data: session } = useSession();
 
-  useEffect(() => {}, []);
+  const [categoryItems, setCategoryItems] = useState([]);
+  const { data: categoryData, isLoading } = useGetCategoriesQuery(undefined);
+
+  useEffect(() => {
+    if (!isLoading && categoryData) {
+      setCategoryItems(
+        [...categoryData.data].map((item) => ({
+          key: item._id,
+          label: (
+            <Link href={`/category/${item._id}`}>{item.categoryName}</Link>
+          ),
+        }))
+      );
+    }
+  }, [categoryData, isLoading]);
+
   return (
     <div className="flex justify-between">
       <div className="demo-logo ">
@@ -25,7 +40,7 @@ const HeaderSection = () => {
         <>
           <Menu theme="dark" className="ms-auto ">
             <Dropdown
-              menu={{ items: headerItems }}
+              menu={{ items: categoryItems }}
               className="me-2"
               placement="bottomRight"
               arrow
