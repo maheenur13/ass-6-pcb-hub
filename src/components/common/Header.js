@@ -1,4 +1,5 @@
 import { useWindowSize } from "@/hooks/useWindowSize";
+import { setAuthModalOpen } from "@/redux/features/user/user.slice";
 import { useAppDispatch } from "@/redux/hook";
 import { Avatar, Button, Dropdown, Menu } from "antd";
 import { signOut, useSession } from "next-auth/react";
@@ -35,16 +36,16 @@ const HeaderSection = () => {
               <Link href={"/pc-builder"}>PC Builder</Link>
             </Button>
 
-            {/* {!session?.user && (
-          <Button
-            type="primary"
-            onClick={() => dispatch(setAuthModalOpen(true))}
-            danger
-            className="ms-2"
-          >
-            Sign In
-          </Button>
-        )} */}
+            {!session?.user && (
+              <Button
+                type="primary"
+                onClick={() => dispatch(setAuthModalOpen(true))}
+                danger
+                className="ms-2"
+              >
+                Sign In
+              </Button>
+            )}
             {session?.user && (
               <span className="ms-2">
                 <Dropdown

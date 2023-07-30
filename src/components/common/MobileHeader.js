@@ -119,6 +119,7 @@ const MobileHeader = () => {
                   onClose();
                   dispatch(setAuthModalOpen(true));
                 }}
+                danger
                 type="primary"
                 className="w-full"
               >

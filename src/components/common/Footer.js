@@ -5,7 +5,7 @@ const FooterSection = () => {
     <footer className="bg-gray-800 text-white py-4">
       <div className="container mx-auto flex items-center justify-center">
         <p className="text-center text-sm">
-          &copy; {new Date().getFullYear()} YourWebsite. All rights reserved.
+          &copy; {new Date().getFullYear()} PCB HUB. All rights reserved.
         </p>
       </div>
     </footer>
