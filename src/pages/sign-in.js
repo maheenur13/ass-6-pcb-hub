@@ -11,7 +11,7 @@ const SignIn = () => {
     // Implement GitHub authentication logic here
     // Redirect the user to the GitHub authentication page
     signIn("github", {
-      callbackUrl: process.env.PUBLIC_URL,
+      callbackUrl: "https://ass-6-pcb-ktncbgd1i-maheenur13.vercel.app",
     });
   };
   const handleGoogleAuth = () => {
