@@ -1,12 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-// import {
-//   createUserWithEmailAndPassword,
-//   signInWithEmailAndPassword,
-// } from 'firebase/auth';
 
 const initialState = {
   isLoggedIn: false,
   authModalOpen: false,
+  mobileSideBar: false,
   user: {
     email: null,
     name: null,
@@ -21,6 +18,9 @@ const userSlice = createSlice({
     setUser: (state, action) => {
       state.user = action.payload;
     },
+    setMobileSideBar: (state, action) => {
+      state.mobileSideBar = action.payload;
+    },
     setLoggedIn: (state, action) => {
       state.isLoggedIn = action.payload;
     },
@@ -34,7 +34,12 @@ const userSlice = createSlice({
   },
 });
 
-export const { setUser, setLoggedIn, removeUser, setAuthModalOpen } =
-  userSlice.actions;
+export const {
+  setUser,
+  setLoggedIn,
+  removeUser,
+  setAuthModalOpen,
+  setMobileSideBar,
+} = userSlice.actions;
 
 export default userSlice.reducer;
